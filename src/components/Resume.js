@@ -3,6 +3,8 @@ import React from 'react';
 function Resume() {
     const frontEndSkills = [
         'HTML',
+        'CSS',
+        'Responsive Design',
         'JavaScript',
         'Git',
         'APIs (web APIs, third-party APIs)',

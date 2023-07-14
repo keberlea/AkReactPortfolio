@@ -3,7 +3,9 @@ import Project from './Project';
 import techBlog from '../assests/techBlog.PNG';
 import notesTaker from '../assests/NotesPage.PNG';
 import workDay from '../assests/workDayScheduler.PNG';
+import storyShare from '../assests/storyshare.gif';
 import { Zoom } from "react-awesome-reveal";
+
 
 function Portfolio() {
   return (
@@ -12,6 +14,16 @@ function Portfolio() {
       <p>Hover over each screenshot to see the title and description.</p>
       <p>Click on the image to be taken directly to the GitHub </p>
       <div className="project-list">
+      <Zoom>
+        <Project
+          title="StoryShare"
+          image={storyShare}
+          description="About
+          StoryShare is a collaborative writing platform that empowers creative writers to receive writing prompts and share their stories. It provides an immersive space for writers to enhance their writing skills, engage with a vibrant writing community, and foster a love for storytelling."
+          liveLink="https://storyshare-33372975577a.herokuapp.com/"
+          githubLink="https://github.com/keberlea/storyshare"
+        />
+        </Zoom>
         <Zoom>
         <Project
           title="Tech Blog"
