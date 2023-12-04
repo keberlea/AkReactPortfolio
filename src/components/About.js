@@ -1,9 +1,22 @@
 import React from 'react';
+import akportrait from '../assests/akportrait.jpg';
+import Figure from 'react-bootstrap/Figure';
+
+
 
 function About() {
   return (
     <section id="about">
       <h2 className="page-title">About Me</h2>
+      <img
+        style={{ maxWidth: "75%" }}
+        srcSet={`${akportrait} 320w, ${akportrait} 680w, ${akportrait} 960w, ${akportrait} 1280w, ${akportrait} 1920w`}
+        sizes="(max-width: 320px) 280px, (max-width: 680px) 640px, (max-width: 960px) 920px, (max-width: 1280px) 1240px, 1920px"
+        src={akportrait}
+        alt="Alicia holding a shovel and carrying backpack with snowboard on mt. hood oregon, wearing a blue shirt and black hat"
+/>
+
+      
       <section className="body-text">
       <p>
         Hello! My name is Alicia Keberle, and I'm delighted to share more about myself. I have a strong background in pharmaceutical production, cannabinoid extraction and food production quality control. I've had the opportunity to work on various projects and contribute to the development of innovative products and new procedures in analytical testing.
