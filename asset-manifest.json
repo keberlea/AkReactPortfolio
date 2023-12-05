@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/AkReactPortfolio/static/css/main.351fa16b.css",
+    "main.js": "/AkReactPortfolio/static/js/main.26f1b890.js",
+    "static/js/787.9f263eb5.chunk.js": "/AkReactPortfolio/static/js/787.9f263eb5.chunk.js",
+    "static/media/NotesPage.PNG": "/AkReactPortfolio/static/media/NotesPage.5adeda38d53a4302a05f.PNG",
+    "static/media/techBlog.PNG": "/AkReactPortfolio/static/media/techBlog.bebfb8cd67dad27f3c84.PNG",
+    "static/media/akportrait.jpg": "/AkReactPortfolio/static/media/akportrait.424f49adbbfc63a892a9.jpg",
+    "static/media/workDayScheduler.PNG": "/AkReactPortfolio/static/media/workDayScheduler.4cfd5ca768a42d87f0a9.PNG",
+    "index.html": "/AkReactPortfolio/index.html",
+    "main.351fa16b.css.map": "/AkReactPortfolio/static/css/main.351fa16b.css.map",
+    "main.26f1b890.js.map": "/AkReactPortfolio/static/js/main.26f1b890.js.map",
+    "787.9f263eb5.chunk.js.map": "/AkReactPortfolio/static/js/787.9f263eb5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.351fa16b.css",
+    "static/js/main.26f1b890.js"
+  ]
+}
