@@ -124,6 +124,37 @@ button {
   height: auto;
 }
 
+/* Flex container styling */
+.about-container {
+  display: flex;
+  align-items: flex-start; /* Aligns the top of the image and text */
+  gap: 20px; /* Adds space between the image and text */
+}
+
+/* Image styling */
+.about-image {
+  max-width: 15%; /* You can adjust this to your preference */
+  height: auto;
+}
+
+/* Body text styling */
+.body-text {
+  max-width: 80%; /* Ensures text does not take up too much space */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stacks image and text vertically on smaller screens */
+    align-items: center;
+  }
+
+  .about-image {
+    max-width: 50%; /* Increase image size for smaller screens */
+  }
+}
+
+
 /* Style the footer */
 .footer {
   background-color: #ffffff;
