@@ -133,8 +133,8 @@ button {
 
 /* Image styling */
 .about-image{
-  max-width: 15%;
-  max-height: 20%;
+  max-width: 1rem;
+  max-height: 3rem;
 }
 
 
