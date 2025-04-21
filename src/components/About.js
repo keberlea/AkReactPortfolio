@@ -11,7 +11,6 @@ function About() {
       <div className="about-container">
         <img
           className="about-image"
-          srcSet={`${akportrait} 320w, ${akportrait} 680w, ${akportrait} 960w, ${akportrait} 1280w, ${akportrait} 1920w`}
           src={akportrait}
           alt="Alicia holding a shovel and carrying backpack with snowboard on mt. hood oregon, wearing a blue shirt and black hat"
         />

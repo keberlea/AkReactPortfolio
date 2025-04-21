@@ -132,10 +132,11 @@ button {
 }
 
 /* Image styling */
-.about-image {
-  max-width: 15%; /* You can adjust this to your preference */
-  height: auto;
+.about-image{
+  max-width: 15%;
+  max-height: 20%;
 }
+
 
 /* Body text styling */
 .body-text {
