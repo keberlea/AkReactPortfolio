@@ -144,7 +144,7 @@ button {
 }
 
 /* Media query for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .about-container {
     flex-direction: column; /* Stacks image and text vertically on smaller screens */
     align-items: center;
