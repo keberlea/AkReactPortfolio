@@ -55,9 +55,18 @@ function About() {
             </div>
           </div>
         </Fade>
+      </div>
+      {/* Flex container */}
+      <div className="about-container">
+        <img
+          className="about-image"
+          src={akportrait}
+          alt="Alicia holding a shovel and carrying backpack with snowboard on mt. hood oregon, wearing a blue shirt and black hat"
+        />
 
       </div>
     </section>
+    
   );
 }
 
