@@ -3,41 +3,64 @@ import Project from './Project';
 import techBlog from '../assests/techBlog.PNG';
 import notesTaker from '../assests/NotesPage.PNG';
 import workDay from '../assests/workDayScheduler.PNG';
-import { Zoom } from "react-awesome-reveal";
+import { Fade } from 'react-awesome-reveal';
+
+// ── Add your projects here ──────────────────────────────────
+const projects = [
+  {
+    title: 'Tech Blog',
+    image: techBlog,
+    description:
+      'A developer-focused CMS blog platform where tech enthusiasts can share articles and interact through comments. Features user authentication, personal dashboards, and full CRUD for posts.',
+    githubLink: 'https://github.com/keberlea/TechBlog',
+    liveLink: 'https://techblog-ak-22eff5f469ce.herokuapp.com/',
+    stack: ['Node.js', 'MySQL', 'Sequelize', 'Handlebars'],
+  },
+  {
+    title: 'Note Taker',
+    image: notesTaker,
+    description:
+      'A clean note-taking app with an Express.js backend that persists notes to a JSON file. Supports creating, viewing, and deleting notes through a simple, intuitive interface.',
+    githubLink: 'https://github.com/keberlea/NoteTakerExpressJS',
+    liveLink: null,
+    stack: ['Express.js', 'Node.js', 'JSON Storage'],
+  },
+  {
+    title: 'Work-Day Scheduler',
+    image: workDay,
+    description:
+      'A daily planner that saves tasks to local storage and color-codes time blocks to indicate past, current, and future hours — keeping your day organized at a glance.',
+    githubLink: 'https://github.com/keberlea/workdayschedule',
+    liveLink: null,
+    stack: ['HTML', 'CSS', 'JavaScript', 'jQuery'],
+  },
+  // ── Add more projects below ──────────────────────────────
+  // {
+  //   title: 'Your Next Project',
+  //   image: yourImage,
+  //   description: 'Description here.',
+  //   githubLink: 'https://github.com/keberlea/...',
+  //   liveLink: 'https://...',
+  //   stack: ['React', 'Node.js'],
+  // },
+];
 
 function Portfolio() {
   return (
     <section id="portfolio">
-      <h2 className="page-title">Portfolio</h2>
-      <p>Hover over each screenshot to see the title and description.</p>
-      <p>Click on the image to be taken directly to the GitHub </p>
-      <div className="project-list">
-        <Zoom>
-        <Project
-          title="Tech Blog"
-          image={techBlog}
-          description="This project is a developer-focused blog site that provides a platform for tech enthusiasts to share their thoughts, articles, and blog posts. It features a homepage displaying existing blog posts, a login page for account access, and a personal dashboard for managing posts. Users can interact with their own posts, view comments, and leave comments on other posts. The site ensures a secure experience using technologies like MySQL, Sequelize, and session management. It aims to foster a dynamic and supportive environment for developers to connect and share knowledge"
-          liveLink="https://techblog-ak-22eff5f469ce.herokuapp.com/"
-          githubLink="https://github.com/keberlea/TechBlog"
-        />
-        </Zoom>
-        <Zoom delay="150">
-        <Project
-          title="Note Taker"
-          image={notesTaker}
-          description="This note-taking app allows users to create and save notes with titles and text. The notes are stored in a JSON file and can be easily managed. Delete a note by clicking the red garbage can icon."
-          githubLink="https://github.com/keberlea/NoteTakerExpressJS"
-        />
-        </Zoom>
-        <Zoom delay="300">
-         <Project
-          title="Work-Day Scheduler"
-          image={workDay}
-          description="Work-Day Scheduler allows you to save your daily notes or tasks to local storage and visually differentiates time blocks with background colors indicating past (gray), current (red), and future (green)."
-          githubLink="https://github.com/keberlea/workdayschedule"
-        />
-        </Zoom>
-        
+      <div className="section-header">
+        <span className="section-label">Selected work</span>
+        <h2 className="section-title">Portfolio</h2>
+      </div>
+
+      <div className="container">
+        <div className="portfolio-grid">
+          {projects.map((project, i) => (
+            <Fade key={project.title} direction="up" delay={i * 100} triggerOnce duration={700}>
+              <Project {...project} />
+            </Fade>
+          ))}
+        </div>
       </div>
     </section>
   );
