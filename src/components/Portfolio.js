@@ -3,6 +3,7 @@ import Project from './Project';
 import techBlog from '../assests/techBlog.PNG';
 import notesTaker from '../assests/NotesPage.PNG';
 import workDay from '../assests/workDayScheduler.PNG';
+import tokeativity from '../assests/TokeativityInsights.png';
 import { Zoom } from "react-awesome-reveal";
 
 function Portfolio() {
@@ -14,6 +15,17 @@ function Portfolio() {
       <div className="project-list">
         <Zoom>
         <Project
+          title="Tokeativity Insights"
+          image={tokeativity}
+          description="Tokeativity Insights is a React based application that provides users with insights into their cannabis consumption habits. 
+                      It allows users to track their cannabis usage, including the strains they consume, the methods of consumption, and the effects they experience. 
+                      The application offers visualizations and analytics to help users understand their consumption patterns .
+                      Database management is handled using MongoDB and Mongoose, while user authentication is implemented with OAuth.
+                      The application also integrates with the Hume API and Claude APIs to provide users with conversational AI  and a point reward system to encourage survey participation."
+        />
+        </Zoom>
+        <Zoom>
+        <Project
           title="Tech Blog"
           image={techBlog}
           description="This project is a developer-focused blog site that provides a platform for tech enthusiasts to share their thoughts, articles, and blog posts. It features a homepage displaying existing blog posts, a login page for account access, and a personal dashboard for managing posts. Users can interact with their own posts, view comments, and leave comments on other posts. The site ensures a secure experience using technologies like MySQL, Sequelize, and session management. It aims to foster a dynamic and supportive environment for developers to connect and share knowledge"
@@ -21,7 +33,7 @@ function Portfolio() {
           githubLink="https://github.com/keberlea/TechBlog"
         />
         </Zoom>
-        <Zoom delay="150">
+        <Zoom>
         <Project
           title="Note Taker"
           image={notesTaker}
@@ -29,7 +41,7 @@ function Portfolio() {
           githubLink="https://github.com/keberlea/NoteTakerExpressJS"
         />
         </Zoom>
-        <Zoom delay="300">
+        <Zoom>
          <Project
           title="Work-Day Scheduler"
           image={workDay}
@@ -37,7 +49,14 @@ function Portfolio() {
           githubLink="https://github.com/keberlea/workdayschedule"
         />
         </Zoom>
-        
+        <Zoom>
+         <Project
+          title="Work-Day Scheduler"
+          image={workDay}
+          description="Work-Day Scheduler allows you to save your daily notes or tasks to local storage and visually differentiates time blocks with background colors indicating past (gray), current (red), and future (green)."
+          githubLink="https://github.com/keberlea/workdayschedule"
+        />
+        </Zoom>
       </div>
     </section>
   );
