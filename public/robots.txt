@@ -1,3 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location — update with your real domain
+Sitemap: https://aliciakeberle.com/sitemap.xml

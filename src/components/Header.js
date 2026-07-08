@@ -1,27 +1,90 @@
-//define header component with name "Alicia Keberle" with navigation component 
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from './Nav';
-import { JackInTheBox } from "react-awesome-reveal";
+import Logo from './Logo';
+import { useTheme } from './ThemeContext';
 
+const SunIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1" x2="12" y2="3"/>
+    <line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1" y1="12" x2="3" y2="12"/>
+    <line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+);
 
-function Header(props) {
-  const { setCurrentSection } = props;
+const MoonIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+);
 
-  const sections = ['About', 'Portfolio', 'Contact', 'Resume'];
+function Header({ setCurrentSection, currentSection }) {
+  const { theme, toggleTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const sections = ['About', 'Skills', 'Portfolio', 'Experience', 'Contact'];
+
+  const handleNavClick = (section) => {
+    setCurrentSection(section);
+    setMenuOpen(false);
+  };
 
   return (
-    
-    <header className="header-container">
-      
-        <JackInTheBox>
-      <h1 className="logo">Alicia Keberle</h1>
-        </JackInTheBox>
-      <Nav
-        sections={sections}
-        setCurrentSection={setCurrentSection}
-        currentSection={props.currentSection}
-      />
-    </header>
+    <>
+      <header className="header">
+        <div className="header-inner">
+
+          {/* Logo mark — links back to top */}
+          <a href="#about" className="logo-link" aria-label="Alicia Keberle — back to top">
+            <Logo />
+          </a>
+
+          <div className="header-right">
+            <Nav
+              sections={sections}
+              setCurrentSection={handleNavClick}
+              currentSection={currentSection}
+            />
+
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            </button>
+
+            <button
+              className={`hamburger ${menuOpen ? 'open' : ''}`}
+              onClick={() => setMenuOpen(o => !o)}
+              aria-label="Toggle navigation"
+            >
+              <span /><span /><span />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile menu */}
+      <nav className={`mobile-menu ${menuOpen ? 'open' : ''}`} aria-label="Mobile navigation">
+        {sections.map(section => (
+          <li key={section} className="nav-item">
+            <a
+              href={`#${section.toLowerCase()}`}
+              onClick={() => handleNavClick(section)}
+              className={currentSection === section ? 'active' : ''}
+            >
+              {section}
+            </a>
+          </li>
+        ))}
+      </nav>
+    </>
   );
 }
 

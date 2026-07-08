@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
+  <style>
+    :root { --c: #9e7070; }
+    @media (prefers-color-scheme: dark) { :root { --c: #c49090; } }
+  </style>
+
+  <!-- Outer hex -->
+  <polygon
+    points="37,5 63,20 63,50 37,65 11,50 11,20"
+    fill="none"
+    stroke="var(--c)"
+    stroke-width="1.2"
+  />
+
+  <!-- Inner hex (subtle second ring) -->
+  <polygon
+    points="37,13 56,24 56,46 37,57 18,46 18,24"
+    fill="none"
+    stroke="var(--c)"
+    stroke-width="0.5"
+    opacity="0.38"
+  />
+
+  <!-- AK initials -->
+  <text
+    x="37"
+    y="44"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="24"
+    fill="var(--c)"
+  >AK</text>
+</svg>

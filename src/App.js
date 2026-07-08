@@ -1,46 +1,34 @@
 import React, { useState } from 'react';
 import './App.css';
+import { ThemeProvider } from './components/ThemeContext';
 import Header from './components/Header';
 import About from './components/About';
-import Contact from './components/ContactForm';
+import Skills from './components/Skills';
 import Portfolio from './components/Portfolio';
-import Resume from './components/Resume';
+import Timeline from './components/Timeline';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
-
 
 function App() {
   const [currentSection, setCurrentSection] = useState('About');
 
-  const sections = ['About', 'Portfolio', 'Contact', 'Resume'];
-
-  const renderSection = () => {
-    switch (currentSection) {
-      case 'About':
-        return <About />;
-      case 'Contact':
-        return <Contact />;
-      case 'Portfolio':
-        return <Portfolio />;
-      case 'Resume':
-        return <Resume />;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className="App">
-      <Header
-        sections={sections}
-        setCurrentSection={setCurrentSection}
-        currentSection={currentSection}
-      />
-       <main className="main-content">{renderSection()}</main>
-       <Footer>
-        
-       </Footer>
-    </div>
-
+    <ThemeProvider>
+      <div className="App">
+        <Header
+          currentSection={currentSection}
+          setCurrentSection={setCurrentSection}
+        />
+        <main>
+          <About />
+          <Skills />
+          <Portfolio />
+          <Timeline />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

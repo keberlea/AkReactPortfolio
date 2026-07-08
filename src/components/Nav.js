@@ -1,19 +1,16 @@
-//navigation component
-//conditionally renders different sections based on navigation selection
-// sections: About me, Portfolio, Contact and Resume
 import React from 'react';
 
-function Nav(props) {
-  const { sections = [], setCurrentSection, currentSection } = props;
-
+function Nav({ sections = [], setCurrentSection, currentSection }) {
   return (
-    <nav>
+    <nav aria-label="Main navigation">
       <ul className="nav-list">
         {sections.map((section) => (
           <li key={section} className="nav-item">
             <a
-              href={`#${section}`}
-              onClick={() => setCurrentSection(section)}
+              href={`#${section.toLowerCase()}`}
+              onClick={(e) => {
+                setCurrentSection(section);
+              }}
               className={currentSection === section ? 'active' : ''}
             >
               {section}
